@@ -1,0 +1,39 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+  -webkit-tap-highlight-color: transparent;
+  outline: none;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  box-sizing: border-box;
+  font-size: 1.6rem;
+}
+
+button {
+  background-color: transparent;
+  border: none;
+  font: inherit;
+}
+
+.navigation {
+  display: flex;
+  align-items: center;
+  min-height: 5rem;
+  padding: 1rem 2.5rem;
+}
+
+.circle {
+  margin-right: auto;
+  width: 5rem;
+  height: 5rem;
+  border-radius: 50%;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+}
+
+/*# sourceMappingURL=main.css.map */

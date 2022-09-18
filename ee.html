@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+        body {
+            min-height: 100vh;
+            overflow: hidden;
+            background: black;
+        }
+
+
+        p {
+            font-size: .8rem;
+            text-align: justify;
+            line-height: .6rem;
+            letter-spacing: 0px;
+            word-spacing: -3px;
+            background: url("assets/images/img5.jpg") no-repeat fixed center/cover;
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: rgba(255, 255, 255, .0);
+
+        }
+
+        @media (min-width: 62.5em) {
+            p {
+                background-size: contain;
+                font-size: 1rem;
+            }
+        }
+    </style>
+
+    <script>
+        window.addEventListener('load', () => {
+            const p = document.querySelector('p');
+            let lyricIndex = 0;
+            const lyrics = `Get up, get up Kiddominant on the beat, better run it back Fuckin' Robitussin I don't know why this shit got me lazy right now, yeah Can't do Percocets or Molly I'm turnin' one, tryna live it up here right, right, right Baby, you can Ride it, ooh, yeah Bring it over to my place And you be like "Baby, who cares?" But I know you care Bring it over to my place You don't know what you did, did to me Your body lightweight speaks to me I don't know what you did, did to me Your body lightweight speaks to me I can make it hurricane on it Hunnid bands, make it rain on it Tie it up, put a chain on it Make you tattoo my name on it, oh Make you cry like a baby, yeah Let's GoPro and make a video, yeah Make you cry like a baby, yeah Let's GoPro and make a video Oh, yeah, yeah, yeah, yeah Baby, you can Ride it, ooh, yeah Bring it over to my place And you be like "Baby, who cares?" But I know you care Bring it over to my place You don't know what you did, did to me Your body lightweight speaks to me I don't know what you did, did to me Your body lightweight speaks to me Baby, you can Ride it, ooh, yeah And you be like "Baby, who cares?" But I know you care`
+
+            function type() {
+                if(p.clientHeight <= window.innerHeight) {
+                    p.textContent += lyrics[lyricIndex];
+                    lyricIndex++;
+
+                    if(lyricIndex == lyrics.length) lyricIndex = 0;
+
+                    setTimeout(type, 0);
+                }
+            }
+
+            type();
+
+            window.addEventListener('resize', type);
+        })
+    </script>
+</head>
+<body>
+    <section class="text">
+        <p class="text-p">
+        </p>
+    </section>
+</body>
+</html>
