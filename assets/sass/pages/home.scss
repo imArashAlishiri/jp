@@ -1,6 +1,72 @@
 @use '../abstracts/index.scss' as *;
 
-body {
-    overflow: hidden;
-    position: relative;
+
+section {
+    padding: 3rem 2rem;
+}
+
+
+
+
+//  main ==================
+
+
+
+.main {
+    background: red;
+    height: 100%;
+}
+
+
+
+
+
+
+
+
+//  alphabet section ==================
+.alphabet {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row-reverse;
+}
+
+.alphabet-section {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+
+    &__random-quiz-btn {
+        margin-bottom: 2rem;
+    }
+}
+
+.alphabet-column__column-quiz-btn, .alphabet-section__random-quiz-btn {
+    border-radius: 10rem;
+    padding: 1rem;
+    background: rgb(187, 187, 187);
+    cursor: pointer;
+}
+
+.alphabet-column {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 1.5rem auto;
+
+    &__column-quiz-btn {
+        font-size: 1.8rem;
+        min-width: 4rem;
+    }
+
+    &__letter {
+        cursor: pointer;
+        font-size: 2rem;
+        box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;        border-radius: .4rem;
+        padding: .8rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 1rem;
+    }
 }
