@@ -1,4 +1,6 @@
 @use '../abstracts/index.scss' as *;
 
 body {
+    overflow: hidden;
+    position: relative;
 }

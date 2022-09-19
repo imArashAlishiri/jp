@@ -1,14 +1,70 @@
-.navigation {
+.nav {
+    font-size: 1.3em;
+    padding: 3rem 3rem;
+    align-items: flex-start;
     display: flex;
-    align-items: center;
-    min-height: 5rem;
-    padding: 1rem 2.5rem;
+    flex-direction: column;
+    background: rgba(0, 0, 0, 0.055);
+    height: 100vh;
+    width: 70%;
+    top: 0;
+    right: 100%;
+    position: absolute;
+    backdrop-filter:saturate(180%) blur(10px);
+    transition-duration: .5s;
+
+    &__btn {
+        margin-bottom: 1.3rem;
+    }
+}
+
+
+
+
+.ham {
+    cursor: pointer;
+
+    &__bar {
+        height: .3rem;
+        width: 3rem;
+        background: black;
+        transition: transform .5s;
+    }
+
+    &__bar:not(:last-child) {
+        margin-bottom: .5rem;
+    }
 }
 
 .circle {
+    cursor: pointer;
     margin-right: auto;
-    width: 5rem;
-    height: 5rem;
+    width: 4.3rem;
+    height: 4.3rem;
     border-radius: 50%;
+    transition: all .2s;
     box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+}
+
+.circle-animate {
+    transform: scale(1.2);
+}
+.nav-animate {
+    transform: translateX(100%);
+}
+
+.ham-animate {
+
+    div:first-child {
+        transform:translateY(.8rem) rotateZ(40deg);
+    }
+
+    div:nth-child(2) {
+        transform: translateX(8rem);
+    }
+
+    div:last-child {
+        transform:translateY(-.8rem) rotateZ(-40deg);
+    }
+
 }

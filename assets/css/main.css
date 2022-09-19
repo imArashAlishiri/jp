@@ -7,6 +7,7 @@
 }
 
 html {
+  overflow: hidden;
   font-size: 62.5%;
 }
 
@@ -21,19 +22,77 @@ button {
   font: inherit;
 }
 
-.navigation {
+body {
+  overflow: hidden;
+  position: relative;
+}
+
+.header {
   display: flex;
   align-items: center;
+  justify-content: space-between;
   min-height: 5rem;
   padding: 1rem 2.5rem;
 }
 
+.nav {
+  font-size: 1.3em;
+  padding: 3rem 3rem;
+  align-items: flex-start;
+  display: flex;
+  flex-direction: column;
+  background: rgba(0, 0, 0, 0.055);
+  height: 100vh;
+  width: 70%;
+  top: 0;
+  right: 100%;
+  position: absolute;
+  backdrop-filter: saturate(180%) blur(10px);
+  transition-duration: 0.5s;
+}
+.nav__btn {
+  margin-bottom: 1.3rem;
+}
+
+.ham {
+  cursor: pointer;
+}
+.ham__bar {
+  height: 0.3rem;
+  width: 3rem;
+  background: black;
+  transition: transform 0.5s;
+}
+.ham__bar:not(:last-child) {
+  margin-bottom: 0.5rem;
+}
+
 .circle {
+  cursor: pointer;
   margin-right: auto;
-  width: 5rem;
-  height: 5rem;
+  width: 4.3rem;
+  height: 4.3rem;
   border-radius: 50%;
+  transition: all 0.2s;
   box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+}
+
+.circle-animate {
+  transform: scale(1.2);
+}
+
+.nav-animate {
+  transform: translateX(100%);
+}
+
+.ham-animate div:first-child {
+  transform: translateY(0.8rem) rotateZ(40deg);
+}
+.ham-animate div:nth-child(2) {
+  transform: translateX(8rem);
+}
+.ham-animate div:last-child {
+  transform: translateY(-0.8rem) rotateZ(-40deg);
 }
 
 /*# sourceMappingURL=main.css.map */

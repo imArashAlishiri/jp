@@ -10,19 +10,29 @@
 </head>
 <body>
     <header class="header">
-        <nav class="navigation">
-            <div class="circle"></div>
-            <button class="btn nav-btn">The Alphabet</button>
-            <button class="btn nav-btn">Words</button>
-            <button class="btn nav-btn">Sentences</button>
+        <div class="circle"></div>
+
+        <div class="ham">
+            <div class="ham__bar"></div>
+            <div class="ham__bar"></div>
+            <div class="ham__bar"></div>
+        </div>
+
+        <nav class="nav">
+            <button class="btn nav__btn" data-subject="alphabet">The Alphabet</button>
+            <button class="btn nav__btn" data-subject="words">Words</button>
+            <button class="btn nav__btn" data-subject="sentences">Sentences</button>
         </nav>
     </header>
     <main class="main">
     </main>
 
-    <div class="alphabet hidden">
+    <section class="alphabet hidden">
+        <header class="alphabet__header">
+            <button class="btn alphabet__quiz-btn">Quiz Randomly</button>
+        </header>
         <div class="alphabet-column first-column">
-            <div data-character="a">あ</div>
+            <div>あ</div>
             <div>い</div>
             <div>う</div>
             <div>え</div>
@@ -43,18 +53,61 @@
             <div>せ</div>
             <div>そ</div>
         </div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
+        <div class="alphabet-column t-column">
+            <div>た</div>
+            <div>ち</div>
+            <div>つ</div>
+            <div>て</div>
+            <div>と</div>
+        </div>
+        <div class="alphabet-column t-column">
+            <div>た</div>
+            <div>ち</div>
+            <div>つ</div>
+            <div>て</div>
+            <div>と</div>
+        </div>
+        <div class="alphabet-column n-column">
+            <div>な</div>
+            <div>に</div>
+            <div>ぬ</div>
+            <div>ね</div>
+            <div>の</div>
+        </div>
+        <div class="alphabet-column h-column">
+            <div>は</div>
+            <div>ひ</div>
+            <div>ふ</div>
+            <div>へ</div>
+            <div>ほ</div>
+        </div>
+        <div class="alphabet-column m-column">
+            <div>ま</div>
+            <div>み</div>
+            <div>む</div>
+            <div>め</div>
+            <div>も</div>
+        </div>
+        <div class="alphabet-column y-column">
+            <div>や</div>
+            <div>ゆ</div>
+            <div>よ</div>
+        </div>
+        <div class="alphabet-column r-column">
+            <div>ら</div>
+            <div>り</div>
+            <div>る</div>
+            <div>れ</div>
+            <div>ろ</div>
+        </div>
+        <div class="alphabet-column w-column">
+            <div>わ</div>
+            <div>を</div>
+        </div>
+    </section>
 
-    </div>
+    <section class="words hidden">
 
-    <div class="words hidden">
-
-    </div>
+    </section>
 </body>
 </html>
