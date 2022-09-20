@@ -70,3 +70,73 @@ section {
         margin: 1rem;
     }
 }
+
+
+// =================== quiz
+
+.quiz-section {
+}
+
+// alphabet quiz
+
+.alphabet-quiz {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    max-width: 60rem;
+    margin: auto;
+
+    &__box , &__input{
+        background-color: rgb(241, 241, 241);
+        text-align: center;
+        border-radius: 1rem;
+        padding: 1rem;
+    }
+
+    &__box {
+        margin-bottom: 4rem;
+        transition: background-color .2s;
+    }
+    
+    &__buttons {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    &__btn {
+        background: white;
+        box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+        width: 5rem;
+        height: 5rem;
+        padding: .9rem;
+        margin: auto .5rem;
+        cursor: pointer;
+        border-radius: 50%;
+    }
+
+    &__content {
+        margin: 2rem auto;
+    }
+
+    &__jp-letter {
+        margin-bottom: 2rem;
+        font-size: 4rem;
+    }
+
+    &__en-letter {
+        font-size: 2rem;
+        transition: opacity .3s;
+    }
+
+    &__input-box {
+        height: 3.5rem;
+        border-radius: 10rem;
+        padding: 0 1rem;
+        font-size: 2rem;
+        text-align: center;
+        border: none;
+        box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+    }
+
+}
+
