@@ -22,148 +22,46 @@
         </div>
 
         <nav class="nav">
-            <button class="btn nav__btn" data-subject="alphabet">The Alphabet</button>
-            <button class="btn nav__btn" data-subject="words">Words</button>
-            <button class="btn nav__btn" data-subject="sentences">Sentences</button>
+            <button class="btn nav__btn" data-section="alphabet">The Alphabet</button>
+            <button class="btn nav__btn" data-section="word">Words</button>
+            <button class="btn nav__btn" data-section="sentences">Sentences</button>
         </nav>
     </header>
 
 
-    <main class="main">
-        
+    <main class="main section">
+        <h2 class="animate">
+            <div class="top"></div>
+            <div class="bottom"></div>
+            <div class="left"></div>
+            <div class="right"></div>
+            Two Retards Do Japanese
+        </h2>
     </main>
 
     <section class="alphabet-section hide section">
         <header class="alphabet-section__header">
-            <button class="btn alphabet-section__random-quiz-btn">Quiz Randomly</button>
+            <button class="btn quiz-btn alphabet-section__random-quiz-btn random-quiz-btn" data-type="alphabet">Quiz Randomly</button>
         </header>
         
-        <div class="alphabet">
-            <div class="alphabet-column vowel-column">
-                <button class="btn alphabet-column__column-quiz-btn">
-                    V 
-                </button>
-                <div class="alphabet-column__letter-wrapper">
-                    <div data-letter="a" class="alphabet-column__letter">あ</div>
-                    <div data-letter="i" class="alphabet-column__letter">い</div>
-                    <div data-letter="u" class="alphabet-column__letter">う</div>
-                    <div data-letter="e" class="alphabet-column__letter">え</div>
-                    <div data-letter="o" class="alphabet-column__letter">お</div>
-                </div>
-            </div>
-            <div class="alphabet-column k-column">
-                <button class="btn alphabet-column__column-quiz-btn">
-                    K
-                </button>
-                <div class="alphabet-column__letter-wrapper">                
-                    <div class="alphabet-column__letter">か</div>
-                    <div class="alphabet-column__letter">き</div>
-                    <div class="alphabet-column__letter">く</div>
-                    <div class="alphabet-column__letter">け</div>
-                    <div class="alphabet-column__letter">こ</div>
-                </div>
-            </div>
-            <div class="alphabet-column s-column">
-                <button class="btn alphabet-column__column-quiz-btn">
-                    S
-                </button>
-                <div class="alphabet-column__letter-wrapper">
-                    <div class="alphabet-column__letter">さ</div>
-                    <div class="alphabet-column__letter">し</div>
-                    <div class="alphabet-column__letter">す</div>
-                    <div class="alphabet-column__letter">せ</div>
-                    <div class="alphabet-column__letter">そ</div>
-                </div>
-            </div>
-            <div class="alphabet-column t-column">
-                <button class="btn alphabet-column__column-quiz-btn">
-                    T
-                </button>
-                <div class="alphabet-column__letter-wrapper">
-                    <div class="alphabet-column__letter">た</div>
-                    <div class="alphabet-column__letter">ち</div>
-                    <div class="alphabet-column__letter">つ</div>
-                    <div class="alphabet-column__letter">て</div>
-                    <div class="alphabet-column__letter">と</div>
-                </div>
-            </div>
-    
-            <div class="alphabet-column n-column">
-                <button class="btn alphabet-column__column-quiz-btn">
-                    N
-                </button>
-                <div class="alphabet-column__letter-wrapper">
-                    <div class="alphabet-column__letter">な</div>
-                    <div class="alphabet-column__letter">に</div>
-                    <div class="alphabet-column__letter">ぬ</div>
-                    <div class="alphabet-column__letter">ね</div>
-                    <div class="alphabet-column__letter">の</div>
-                </div>
-            </div>
-            <div class="alphabet-column h-column">
-                <button class="btn alphabet-column__column-quiz-btn">
-                    H
-                </button>
-                <div class="alphabet-column__letter-wrapper">
-                    <div class="alphabet-column__letter">は</div>
-                    <div class="alphabet-column__letter">ひ</div>
-                    <div class="alphabet-column__letter">ふ</div>
-                    <div class="alphabet-column__letter">へ</div>
-                    <div class="alphabet-column__letter">ほ</div>
-                </div>
-            </div>
-            <div class="alphabet-column m-column">
-                <button class="btn alphabet-column__column-quiz-btn">
-                    M
-                </button>
-                <div class="alphabet-column__letter-wrapper">
-                    <div class="alphabet-column__letter">ま</div>
-                    <div class="alphabet-column__letter">み</div>
-                    <div class="alphabet-column__letter">む</div>
-                    <div class="alphabet-column__letter">め</div>
-                    <div class="alphabet-column__letter">も</div>
-                </div>
-            </div>
-            <div class="alphabet-column y-column">
-                <button class="btn alphabet-column__column-quiz-btn">
-                    Y
-                </button>
-                <div class="alphabet-column__letter-wrapper">
-                    <div class="alphabet-column__letter">や</div>
-                    <div class="alphabet-column__letter">ゆ</div>
-                    <div class="alphabet-column__letter">よ</div>
-                </div>
-            </div>
-            <div class="alphabet-column r-column">
-                <button class="btn alphabet-column__column-quiz-btn">
-                    R
-                </button>
-                <div class="alphabet-column__letter-wrapper">
-                    <div class="alphabet-column__letter">ら</div>
-                    <div class="alphabet-column__letter">り</div>
-                    <div class="alphabet-column__letter">る</div>
-                    <div class="alphabet-column__letter">れ</div>
-                    <div class="alphabet-column__letter">ろ</div>
-                </div>
-            </div>
-            <div class="alphabet-column w-column">
-                <button class="btn alphabet-column__column-quiz-btn">
-                    W
-                </button>
-                <div class="alphabet-column__letter-wrapper">
-                    <div class="alphabet-column__letter">わ</div>
-                    <div class="alphabet-column__letter">を</div>
-                </div>
-            </div>
+        <div class="alphabet-wrapper">
+        </div>
+     </section>
+
+    <section class="word-section section hide">
+        <header class="alphabet-section__header">
+            <button class="btn quiz-btn word-section__random-quiz-btn random-quiz-btn" data-type="word">Quiz Randomly</button>
+        </header>
+
+        <div class="word-wrapper">
+
         </div>
     </section>
 
-    <section class="word-section section hidden">
-        sldkafjlfdsj
+    <section class="section quiz-section hide">
     </section>
 
-    <section class="section quiz-section">
-    </section>
+    
 
 </body>
 </html>

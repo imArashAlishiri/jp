@@ -32,50 +32,47 @@ button {
 
 .hidden {
   opacity: 0 !important;
+  transition: opacity 0s !important;
 }
 
 section {
   padding: 3rem 2rem;
 }
 
-.main {
-  background: red;
-  height: 100%;
-}
-
-.alphabet {
+.alphabet-wrapper, .word-wrapper {
   display: flex;
   flex-wrap: wrap;
   flex-direction: row-reverse;
 }
 
-.alphabet-section {
+.alphabet-section, .word-section {
   display: flex;
   align-items: center;
   flex-direction: column;
 }
-.alphabet-section__random-quiz-btn {
+.alphabet-section__random-quiz-btn, .word-section__random-quiz-btn {
   margin-bottom: 2rem;
 }
 
-.alphabet-column__column-quiz-btn, .alphabet-section__random-quiz-btn {
+.quiz-btn {
   border-radius: 10rem;
   padding: 1rem;
   background: rgb(187, 187, 187);
   cursor: pointer;
 }
 
-.alphabet-column {
+.column {
   display: flex;
   flex-direction: column;
   align-items: center;
   margin: 1.5rem auto;
 }
-.alphabet-column__column-quiz-btn {
+.column__quiz-btn {
   font-size: 1.8rem;
   min-width: 4rem;
 }
-.alphabet-column__letter {
+.column__box {
+  background-color: white;
   cursor: pointer;
   font-size: 2rem;
   box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
@@ -87,49 +84,50 @@ section {
   margin: 1rem;
 }
 
-.alphabet-quiz {
+.quiz {
   display: flex;
   flex-direction: column;
   align-items: stretch;
   max-width: 60rem;
   margin: auto;
 }
-.alphabet-quiz__box, .alphabet-quiz__input {
+.quiz__box, .quiz__input {
   background-color: rgb(241, 241, 241);
   text-align: center;
   border-radius: 1rem;
   padding: 1rem;
 }
-.alphabet-quiz__box {
+.quiz__box {
   margin-bottom: 4rem;
   transition: background-color 0.2s;
 }
-.alphabet-quiz__buttons {
+.quiz__buttons {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
+  margin-bottom: 4rem;
 }
-.alphabet-quiz__btn {
+.quiz__btn {
   background: white;
   box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
-  width: 5rem;
-  height: 5rem;
+  width: 5.5rem;
+  height: 5.5rem;
   padding: 0.9rem;
-  margin: auto 0.5rem;
+  margin: auto 1rem;
   cursor: pointer;
   border-radius: 50%;
 }
-.alphabet-quiz__content {
+.quiz__content {
   margin: 2rem auto;
 }
-.alphabet-quiz__jp-letter {
+.quiz__jp {
   margin-bottom: 2rem;
   font-size: 4rem;
 }
-.alphabet-quiz__en-letter {
+.quiz__en {
   font-size: 2rem;
   transition: opacity 0.3s;
 }
-.alphabet-quiz__input-box {
+.quiz__input-box {
   height: 3.5rem;
   border-radius: 10rem;
   padding: 0 1rem;
@@ -137,6 +135,88 @@ section {
   text-align: center;
   border: none;
   box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+}
+
+.main {
+  text-align: center;
+  font-size: 2.3rem;
+  padding: 3rem;
+  line-height: 1.5;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.animate {
+  position: relative;
+  min-width: 15ch;
+  padding: 1rem 2rem;
+}
+
+.top, .left, .right, .bottom {
+  position: absolute;
+  transition-duration: 0.25s;
+  transition-property: transform;
+}
+
+.top {
+  bottom: 100%;
+  left: 0;
+  width: 100%;
+  height: 0.3rem;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition-delay: 0.75s;
+}
+
+.right {
+  transition-delay: 0.5s;
+  height: 100%;
+  width: 0.3rem;
+  left: 100%;
+  top: 0;
+  transform: scaleY(0);
+  transform-origin: top;
+}
+
+.bottom {
+  transition-delay: 0.25s;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  height: 0.3rem;
+  transform: scaleX(0);
+  transform-origin: right;
+}
+
+.left {
+  height: 100%;
+  width: 0.3rem;
+  right: 100%;
+  top: 0;
+  transform: scaleY(0);
+  transform-origin: bottom;
+  transition-delay: 0;
+}
+
+.animate-it .bottom, .animate-it .top {
+  transform: scaleY(1);
+}
+.animate-it .left, .animate-it .right {
+  transform: scaleX(1);
+}
+.animate-it .left {
+  transition-delay: 0.75s;
+}
+.animate-it .bottom {
+  transition-delay: 0.5s;
+}
+.animate-it .right {
+  transition-delay: 0.25s;
+}
+.animate-it .top {
+  transition-delay: 0s;
 }
 
 .header {
@@ -150,6 +230,7 @@ section {
 
 .nav {
   font-size: 1.3em;
+  z-index: 10;
   padding: 3rem 3rem;
   align-items: flex-start;
   display: flex;

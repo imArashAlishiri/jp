@@ -32,4 +32,5 @@ button {
 
 .hidden {
     opacity: 0 !important;
+    transition: opacity 0s !important;
 }
