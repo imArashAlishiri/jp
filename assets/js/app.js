@@ -557,7 +557,7 @@ function displayQuizPage(jp, en) {
 
         const utter = new SpeechSynthesisUtterance(text);
         utter.lang  = 'ja'
-        speechSynthesis.speak(utter);
+        window.speechSynthesis.speak(utter);
     })
 
 }
@@ -629,10 +629,10 @@ function hideSections() {
 function changeBoxColor(bol) {
     document.querySelector('.quiz__en').classList.remove('hidden');
     if(bol) {
-        setQuizBoxColorTo('green');
+        setQuizBoxColorTo('rgb(155, 255, 116)');
         score++;
     } else {
-        setQuizBoxColorTo('red');
+        setQuizBoxColorTo('rgb(255, 116, 116)');
     }
 };
 
