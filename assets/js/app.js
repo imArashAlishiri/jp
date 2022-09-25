@@ -25,7 +25,7 @@ const wordsObj = {
             en: 'Yes',
             answer: ['yes'],
         },
-        'お願いします': {
+        'おねがいします': {
             en: 'Please',
             answer: ['please'],
         },
@@ -35,7 +35,7 @@ const wordsObj = {
             answer: ["you'rewelcome", "yourwelcome", "yourewelcome"],
         },
 
-        'ありがとうございました': {
+        'ありがとう': {
             en: 'Thank you/Thanks',
             answer: ['thanks', 'thankyou'],
         },
@@ -59,51 +59,132 @@ const wordsObj = {
             en: 'Good evening',
             answer: ['goodevening'],
         },
+
     },
 
     day2: {
-        'hkj': {
-            en: "No",
-            answer: ['no'],
+        'ね': {
+            en: 'Hey/Right?',
+            answer: ['right', 'right?', 'hey'],
         },
-        'jilj': {
-            en: 'Yes',
-            answer: ['yes'],
+        'いいね': {
+            en: 'Sounds good/Good idea',
+            answer: ['soundsgood', 'good', 'goodidea'],
         },
-        'lkj': {
-            en: 'Please',
-            answer: ['please'],
+        'すき': {
+            en: 'To Like/Love',
+            answer: ['like', 'love'],
         },
-
-        "asdf": {
-            en: "You're welcome",
-            answer: ["you'rewelcome", "yourwelcome", "yourewelcome"],
+        'じゃ': {
+            en: 'Well/So/Then',
+            answer: ['well', 'then', 'so', 'wellthen'],
         },
-
-        'laskdjf': {
-            en: 'Thank you/Thanks',
-            answer: ['thanks', 'thankyou'],
+        'こんにちは': {
+            en: 'Hello/Hi',
+            answer: ['hi','hello','goodafternoon',"what'sup"],
         },
-        'すみません': {
-            en: 'Excuse me',
-            answer: ['excuseme'],
+        'うるさい': {
+            en: 'Shut up',
+            answer: ['shutup', 'bequite'],
         },
-        'ごめん': {
-            en: "Sorry",
-            answer: ["sorry", "imsorry", "i'msorry", "iamsorry"],
+        'いつ': {
+            en: 'When?/How soon?',
+            answer: ['when', 'howsoon', 'howsoon?', 'atwhattime']
         },
-        'おはよう': {
-            en: 'Good morning',
-            answer: ['goodmorning'],
+        'なんだ': {
+            en: 'What?',
+            answer: ['what', 'what?', 'whatis?', 'whatis'],
         },
-        'おやすみ': {
-            en: 'Good night',
-            answer: ['goodnight'],
+        'なに': {
+            en: 'What?',
+            answer: ['what', 'what?', 'whatis?', 'whatis'],
         },
-        'こんばんは': {
-            en: 'Good evening',
-            answer: ['goodevening'],
+        'と': {
+            en: 'en',
+            answer: ['and', 'and?'],
         },
+        'たべる': {
+            en: 'To Eat',
+            answer: ['toeat', 'eat'],
+        },
+    },
+    day3: {
+        'わかった': {
+            en: 'Okay/Alright',
+            answer: ['ok','okay', 'alright','gotit','igotit','understood','iunderstand']
+        },
+        'ねる': {
+            en: 'To Sleep',
+            answer: ['sleep', 'tosleep'],
+        },
+        'わるい': {
+            en: 'Bad',
+            answer: ['bad'],
+        },
+        'いい': {
+            en: 'Good',
+            answer: ['good'],
+        },
+        'わ': {
+            en: 'As for',
+            answer: ['asfor'],
+        },
+        'もしもし': {
+            en: 'Hey(When on the phone)',
+            answer: ['hi', 'hello','hey', 'hionthephone', 'heyonthephone','helloonthephone'],
+        },
+        'いく': {
+            en: 'To Go',
+            answer: ['go', 'togo'],
+        },
+        'だいじょうぶ': {
+            en: 'Okay/Alright',
+            answer: ['alright', 'okay', 'imokay','imalright'],
+        },
+        'ばか': {
+            en: 'Stupid',
+            answer: ['stupid', 'idiot', 'dumb']
+        },
+        'よわい': {
+            en: 'You watch too much Anime!',
+            answer: ['weak'],
+        },
+        'かわいい': {
+            en: 'Cute',
+            answer: ['cute'],
+        },
+        'わたし': {
+            en: 'I',
+            answer: ['i','me'],
+        },
+        'あなた': {
+            en: 'You',
+            answer: ['you'],
+        },
+        'これ': {
+            en: 'This',
+            answer: ['this'],
+        },
+        'それ': {
+            en: 'That',
+            answer: ['that'],
+        },
+        'かれ': {
+            en: 'He',
+            answer: ['he', 'him'],
+        },
+        'かのじょ': {
+            en: 'She',
+            answer: ['she', 'her'],
+        },
+        'かれら': {
+            en: 'They',
+            answer: ['they', 'them'],
+        },
+        'みる': {
+            en: 'To See/Watch',
+            answer: ['see','watch', 'tosee', 'towatch'],
+        }
     },
 }
 
@@ -223,6 +304,10 @@ document.querySelectorAll('.column__quiz-btn').forEach(btn => {
 
 
 function boxHandler(e) {
+    objCopy = {};
+    objKeys = [];
+    quizColumnType = null;
+    score = 0;
     let letterJp;
     let letterEn;
 
@@ -240,11 +325,16 @@ function boxHandler(e) {
 }
 
 function columnBtnHandler(e) {
+    score = 0;
     if(e.target.dataset.type == 'word') {
+        objCopy = {};
+        objKeys = [];
         Object.assign(objCopy, wordsObj[e.target.dataset.column]);
         objKeys = Object.keys(objCopy);
         quizColumnType = 'word';
     }else {
+        objCopy = {};
+        objKeys = [];
         Object.assign(objCopy, lettersObj[e.target.dataset.column]);
         objKeys = Object.keys(objCopy);
         quizColumnType = 'alphabet';
@@ -255,6 +345,9 @@ function columnBtnHandler(e) {
 }
 
 function randomQuizHandler(e) {
+    objCopy = {};
+    objKeys = [];
+    score = 0;
     if(e.target.dataset.type == 'word') {
         for(day in wordsObj) {
             Object.assign(objCopy, wordsObj[day]);
@@ -268,21 +361,21 @@ function randomQuizHandler(e) {
     }
 
     objKeys = Object.keys(objCopy);
+    console.log(objCopy)
     questions = objKeys.length;
     manageQuizState();
 }
 
 function submitHandler(e) {
     if(e.key !== 'Enter') return;
-    let userInput = e.target.value
+    let userInput = e.target.value.toLowerCase();
     let answer;
     currentElDataset = currentQuizEl.dataset;
     resetInput();
 
     if(currentElDataset.type == 'word') {
         const answerArr = wordsObj[currentElDataset.column][currentElDataset.box].answer;
-        const trimmedInput = userInput.split(' ').join('');
-        console.log(trimmedInput);
+        const trimmedInput = userInput.split(' ').join('').toLowerCase();
         answer = answerArr.includes(trimmedInput);
     } else {
         answer = currentQuizEl.dataset.box.toLocaleLowerCase() == userInput;
@@ -325,7 +418,12 @@ function insertHtml(parent, obj) {
         columnBtnEl.dataset.column = column;
         columnBtnEl.dataset.type = parent;
 
-        columnBtnEl.textContent = column;
+        if(parent == 'alphabet') {
+            columnBtnEl.textContent = column.toUpperCase();
+        } else {
+            const formattedText = `Day ${column.slice(-1)}`;
+            columnBtnEl.textContent = formattedText;
+        }
 
         for(box in obj[column]) {
             const wordEl = columnEl.appendChild(document.createElement('div'));
@@ -416,10 +514,14 @@ function manageQuizState() {
         return;
     }
 
+
     const randomInt = Math.floor(Math.random() * objKeys.length);
     const value = objKeys[randomInt]
     objKeys.splice(randomInt, 1);
     currentQuizEl = document.querySelector(`.${value}`);
+
+
+    console.log(sectionState, objCopy, objKeys)
 
     if(quizColumnType == 'word') {
         displayQuizPage(value, objCopy[value].en);
