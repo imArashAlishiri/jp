@@ -186,6 +186,76 @@ const wordsObj = {
             answer: ['see','watch', 'tosee', 'towatch'],
         }
     },
+    day4: {
+        'はじめまして': {
+            en: 'Nice to meet you',
+            answer: ['nicetomeetyou'],
+        },
+        'まって': {
+            en: 'Wait',
+            answer: ['wait', 'hold on'],
+        },
+        'えいが': {
+            en: 'Movie',
+            answer: ['movie', 'film', 'cinema'],
+        },
+        'みせ': {
+            en: 'Shop/Store',
+            answer: ['shop', 'store'],
+        },
+        'いえ': {
+            en: 'Home/House',
+            answer: ['home', 'house'],
+        },
+        'あとで': {
+            en: 'Later',
+            answer: ['later', 'lateron', 'afterwards'],
+        },
+        'まえに': {
+            en: 'Before',
+            answer: ['before', 'earlier','previously'],
+        },
+        'いま': {
+            en: 'Now/Currently',
+            answer: ['now','currently'],
+        },
+        'きょう': {
+            en: 'Today',
+            answer: ['today'],
+        },
+        'きのう': {
+            en: 'Yesterday',
+            answer: ['yesterday'],
+        },
+        'あした': {
+            en: 'Tomorrow',
+            answer: ['tomorrow'],
+        },
+        'どうして': {
+            en: 'Why?',
+            answer: ['why', 'why?','whatfor', 'whatfor?'],
+        },
+        'あら': {
+            en: 'Oh dear/Oh my',
+            answer: ['ohdear','ohmy','ohgod'],
+        },
+        'がんばる': {
+            en: 'Do your best/Try hard',
+            answer: ['goodluck', 'doyourbest', 'tryhard', 'tryharder']
+        },
+        'そうか': {
+            en: 'Aha/I see',
+            answer: ['aha','isee','okay'],
+        },
+        'きれい': {
+            en: 'Pretty/Beautiful',
+            answer: ['pretty', 'beautiful',],
+        },
+        'わかる': {
+            en: 'To Understand/Know',
+            answer: ['tounderstand', 'toknow', 'understand','know'],
+        }
+    }
 }
 
 const lettersObj = {
